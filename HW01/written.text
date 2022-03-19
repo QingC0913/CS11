@@ -1,0 +1,24 @@
+name: Qing Cheng
+date: 2/10/2021
+hw01, written
+
+programming #3, Talk Like Yoda
+1) pseudocode
+    -declare four string variables, one for each user-input word
+    -output a print statement asking user to enter four words
+    -ask for user inputs
+    -the four inputs will be stored in the string variables
+    -output a print statement with the four variables in reversed order
+        -make sure to add string literals of spaces between each word
+        
+2) issue/error + fix
+    When I was writing the program, I wasn't sure how the terminal would
+    accept the four user-inputs. I thought the user would have to enter a
+    word followed by the return key each time, so the terminal would know
+    what was considered "one" input. However, I discovered that putting
+    all four inputs one a line, separated by spaces, also works. This was a 
+    quick exercise, no bugs. 
+    
+3) time spent
+    I spent around 60 minutes on the coding
+    and around 15 minutes on the written section. 
