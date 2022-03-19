@@ -1,1 +1,17 @@
-HW
+1. iteration table
+//array[array_len] = {8, 10, 3, 2, 9}
+
+         VARIABLES:      i      sum
+before loop starts:      0       0
+        first test:      0       8
+       second test:      1       18
+        third test:      2       21
+       fourth test:      3       23
+        fifth test:      4       32
+
+2. time 
+In the beginning I tried to keep track but after a while I lost track because
+I was spending way too long sitting in front of the computer thinking about
+how to solve the problems. I went to bed thinking about it and went to office 
+hours, so the total time is probably a bigger number than any of the previous
+assignments. 
