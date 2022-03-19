@@ -1,0 +1,52 @@
+HW 6
+written.text
+
+Name: Qing Cheng 
+Login ID: qcheng01
+
+
+Written #1:  How I tested my code
+---------------------------------
+-testing Animal class functions 
+    -created 3 instances of Animal class (read info from file) to test the 
+     accessor functions
+    -printed results of each accessor function with at least one instance 
+    -checked with short_animals.db to make sure the results match
+-testing Animal_Array_List functions
+    -created an Animal_Array_list instance 
+    -added the 3 Animal instances into the Animal_Array_List member array
+     using the add() function 
+    -to make sure that it worked, called num_animals() before and after adding
+     to see that the number of animals in the array is updated by add() 
+    -called print() from Animal_Array_List to check that the Animals are added 
+    -used the Animal_Array_List instance to call its animal_at() function to 
+     call print() (Animal class function) to show that the animal_at() worked 
+    -added more Animal instances to the Animal_Array_List array (total of 6)
+     to check that the private expand() function worked
+    -added statements to print the capacity within the expand() function 
+     before and after allocating more space to check that the capacity doubled 
+    -called the Animal_Array_List print() function again to make sure the array 
+     did expand and successfully added new instances 
+    -added print statements in expand() before calling delete on the array and 
+     after
+-testing initialize_DB
+    -created instance of Animal_Array_List, created a pointer that points to 
+     this instances
+    -called initialize_DB() with the opened file and the pointer as arguments
+    -the Animal_Array_List array should be filled, call its print() to see 
+     whether the results match with short_animals.db
+    (-no need to create pointer, just use &all_animals as argument)
+-testing do_classification_report
+    -the Animal_Array_List containing the Animal instances that fit the desired
+     classification calls its print() function (as specified in spec)
+    -first I tested with short_animals.db with "fish" (1 result), "bird" 
+     (1 results), and "mammal" (7 results), which matched with the database
+    
+    -then I added a print statement outputting the counter for num of animals 
+     that matched the classification, tested animals.db with "insect" and 
+     "bird", and checked the animals.db to see whether the number of results 
+      matched
+    
+Written #2:  How much time I spent on this assignment
+    Around 4.5 hours 
+-----------------------------------------------------
