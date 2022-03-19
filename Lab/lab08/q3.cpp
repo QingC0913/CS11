@@ -1,7 +1,4 @@
-//q4.cpp
-//Qing Cheng
-//3/3/1/2021
-//practice w pointers
+
 
 #include <iostream>
 using namespace std;
@@ -10,10 +7,10 @@ int f(int *z);
 
 int main()
 {
-    int m = 5, n;
+    int    m = 6, n;
 
     n = f(&m);
-
+    m = f(&n);
     cout << m << " " << n << endl;
 
     return 0;
@@ -21,10 +18,5 @@ int main()
 
 int f(int *z)
 {
-    if ( *z <= 0 )
-        return *z + 1;
-
-    *z -= 2;
-
-    return f(z);
+    return 3 + *z ;
 }
