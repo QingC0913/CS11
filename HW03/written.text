@@ -1,1 +1,69 @@
+1. Fabulous Functions
+Number 1: Functions are smaller components that can be coded, tested, and
+          debugged more easily than if one were to do the same for an 
+          entire program. Imagine testing and trying to debug 500 lines
+          of code instead of debugging 30-line functions one by one,
+          making sure it works before moving on to implement/debug another
+          function. 
+Number 2: Functions can be used again and again, and with different inputs
+        --could repeat pieces of code with loops, but might need to create
+          a new loop whenever we need to manipulate different data
+Number 3: Functions break down tasks into smaller, more manageable tasks
+          that are easier to understand. This also makes the program easier
+          for humans to read. The main function would also be less cluttered. 
 
+
+2. More Pseudocode
+   (#3, Word Weaving)
+   -get 3 user input: 2 strings and one int
+   -these three inputs will be used as arguments for the function called
+    output_pattern, which returns nothing
+   -output_pattern:
+        - if it is 0 or negative, it will simply return, because we are 
+          printing 0 lines -- it will do nothing
+        - else: call a helper function called make_pattern
+            -make_pattern returns nothing and takes the 2 user input strings 
+             and the 1 string. 
+            -It is a recursive function and it will print one line of the 
+             pattern, but keeps calling itself until it reaches the desired 
+             number of lines. 
+            -even and odd lines have different patterns, so when call the 
+             function again, switch the first and second string 
+            -the third time that the function is called, the pattern will be 
+             switched back to what it was the first time, so odd lines have 
+             the same pattern, and same for even lines 
+            
+             
+3. Recursion is a thing that's recursive
+    Function 1:
+    part 1) test inputs and expected outputs:
+    mystery1(1, 4) --> 1
+    mystery1(1, 0) --> 0
+    mystery1 (1, 1) --> 1
+    mystery1(100000, 25) --> 25
+    
+    part 2) guess of function's purpose?
+    The final return value is the smaller value out of the two arguments (or 
+    the first argument, if they are equal)
+    Every recursive call decreases the bigger number by one, until the bigger
+    number is equal to the small number. This is what mystery1(a, b-1) and 
+    mystery1(a-1, b) are doing. 
+    But ultimately what matters is when the call reaches (a == b), which is 
+    when we finally get a return value.  
+    
+    Function 2:
+    part 1) test inputs and expected outputs:
+    mystery2(2, 4, 6) --> 11
+    mystery2(1, 3, 9) --> 13
+    mystery2(6, 9, 4) --> 19
+    mystery2(9, 6, 4) --> 19
+    
+    part 2) guess of function's purpose?
+    The final return value is the sum of the three arguments.
+    The function decreases the value of a and b each by 1 until they are both 
+    0, but every time 1 is subtracted from a or b, the same amount is added
+    back to c. 
+    
+
+4. Time
+   I took around 4.5 hours.
