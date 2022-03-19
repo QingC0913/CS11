@@ -1,1 +1,151 @@
+Project 2
+written.text
 
+Name: Qing Cheng
+Login ID:  qcheng01
+
+
+Written #1:  How much time I spent on this assignment
+-----------------------------------------------------
+Week 1 time: 12.25 hrs 
+Week 2 time: 5 hrs
+
+
+Written #2:  How I tested my code
+---------------------------------
+Presumably, you will use wfltest to test your WordFreqLinkedList.
+Give us a few sample sequences of inputs you tried.
+
+For the other parts, did you put tracing print statements in your
+BinnedWordFreqList?  I did.  I put in tracing print statements to list
+each word as it was being counted, the bin it was sent to, the
+resulting length of the list in that bin, and the total number of word
+in all the bins together.  I used the debugPrint functions, and I also
+put print statements in wordfreq.cpp.
+
+Week 1 testing:
+-wordfreq0.cpp
+    -I directed the written.text file into cin and the results showed 
+     that all the words that previously were capitalized in the file were 
+     printed in lowercase (such "I" or my name or the subheadings)
+    -at first the program would print the last word twice because of the way 
+     cin.eof or cin.fail returns a boolean, so I had to change the structure of 
+     the loop a bit so the program reads a word from cin and then check it with 
+     eof or fail 
+    -ran the program and typed in words with letters that are capitalized in 
+     random indices and checked if the words are converted to all lowercase 
+-WFLL.cpp 
+    -constructor 
+    -had a print statement in the constructor so I know that the WFLL object 
+     is successfully created 
+    -countOccurrence()
+    - added print statements (like "we are in the loop") in each loop or 
+      conditional so I know where the program ran into error 
+     -added print statement to print out the parameter so I know the user input 
+     received from main as arg is successfully passed into the function 
+    -add() 
+    -when main ran, selected "count" and typed in a word, then typed "print"
+     to see whether the word was added
+    -at first, could only add one word every time program is run because 
+     had to figure out how to insert the other words alphabetically
+     addAt()
+    -then implemented the addAt() and ran the main function again to try to 
+     add new words and printing them to see whether they were in alphabetical 
+     order 
+    -after I added a list of diff words in correct order, tried to enter 
+     repeated words to see whether freq would be updated 
+    get() 
+    -added print statement to print out the index so I know the user input 
+    received from main as arg is successfully passed into the function     
+    -had a counter to keep track of index of nodes, print out counter at when
+     the loop stops and check whether the loop stopped when counter == index 
+    -wheretoAdd()
+    -supposed to return index at which to insert a node (for alphabetical order)
+    -print out the index before returning so I can check whether that index is 
+     what I expected 
+    size()
+    -after adding multiple words using add(), called size()
+    -added print statements to print each word's address and their index, as 
+     well as the size
+    remove()
+    -account for no item in list: print out statement saying no item to delete 
+    -if item to be deleted is the first in list, then print statement saying
+     this was first item in list, and print statement saying the node will be
+    deleted before I call delete on the Node struct 
+    -prints out statements telling whether the list is empty now or still has 
+     other nodes left (can check with debugPrint to see remaining nodes)
+    -added some words and tried to delete words at different positions (first, 
+     last, in the middle). At first there were some bugs with removing nodes at
+     any position except the first, went to office hours, fixed the bug, tried 
+     to remove words at different positions again
+
+
+Week 2 testing:
+-wordfreq1 and wordfreq2
+    -used the diff testing as specified in the specs with WhoPutTheBomp 
+    (shorter version )
+    -the word counts were different but I found that the I needed to fix the 
+     structure of the while loop that read in the words from the file 
+    -use diff testing with the short text again, as well as with the full text,
+     and there seemed to be no problem 
+    -used WeAreTheChampions as input and compare output to the lyrics (find 
+     the words in Atom and see if the freqs match)
+
+-BinnedWordFreqList
+    -countOccurrence(): put a print statement in the beginning of this function
+     to print out the first letter of the word (the arg) and the index of the 
+     linked list that the word should be in based on the first letter  
+     
+    -size(): had print statements in the function printing the current total 
+     size after adding the sizes of each linked list; call this function 
+     from wordfreq.cpp 
+     
+    -get(): have loop to iterate thru each linked list (as needed), have print 
+     statements declaring the index of the current linked list 
+    -to find the desired struct, I used the given index to subtract the total
+     sizes of all previous linked lists, and I had print statements printing 
+     out the sum or the index every time they are changed
+    -in wordfreq.cpp, enter some words, then use BinnedWordFreqList to get() 
+     words from different linked lists and compare with debugPrint()
+    -tried to get() with indices that are less than 0 or greater than the total 
+     size and see if it prints error message
+     
+     
+
+Written #3:  Timing
+
+-------------------
+(You will do this in week 2.  Leave it blank in week 1.)
+
+Use the "/usr/bin/time -p" command as shown in the assignment.  You
+may use some novels I downloaded from Project Gutenberg and placed in
+/comp/11/files/novels.
+
+Run both versions of your program (wordfreq1 and wordfreq2) on
+AliceInWonderland.txt and two other reasonably large files of your
+choice.  If you choose something that isn't one of the novels, tell us
+what the file was and how big it is.  E. g., show the output of the
+"wc" program on it ("wc" will count lines, "words," and characters in
+the file).
+
+Take the "user" times and enter them in the table below for
+AlicInWonderland.txt and your two other files.
+
+
+WarAndPeace    
+wordfreq1: real = 201.51, user = 201.38, sys = 0.09
+wordfreq2: real =   7.57, user =   7.53, sys = 0.03
+AliceInWonderLand 
+wordfreq1: real = 1.04, user = 1.03, sys = 0.00
+wordfreq2: real = 0.08, user = 0.07, sys = 0.00
+words20000.text
+wordfreq1: real = 11.66, user = 11.63, sys = 0.02 
+wordfreq2: real =  5.66, user =  5.63, sys = 0.02
+words40000.text
+wordfreq1: real = 46.99, user = 46.88, sys = 0.09
+wordfreq2: real = 13.72, user = 13.66, sys = 0.04
+
+If wordfreq1 takes 11.66 secs to add 20,000 words, I would have predicted that
+it would take twice as long to add 40,000 words, but it actually takes four 
+times as much time! For wordfreq2, the time for 40,000 words is a bit more than 
+double the time for 20,000 words
